@@ -8,6 +8,6 @@
   "license": "MIT",
   "scripts": {
     "build": "spago build",
-    "build:example": "spago bundle-app -m Example.Main -t example/dist/app.js"
+    "example": "spago bundle-app -m Example.Main -t example/dist/app.js"
   }
 }

@@ -17,5 +17,5 @@ jobs:
       - name: Build source
         run: npm run build
 
-      - name: Build examples
-        run: npm run examples
+      - name: Build example
+        run: npm run example
