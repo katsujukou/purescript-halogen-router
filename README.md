@@ -1,4 +1,6 @@
 # Halogen Router
+[![CI](https://github.com/katsujukou/purescript-halogen-router/actions/workflows/ci.yml/badge.svg)](https://github.com/katsujukou/purescript-halogen-router/actions/workflows/ci.yml)
+
 Routing management for Halogen.
 
 ### TODO
