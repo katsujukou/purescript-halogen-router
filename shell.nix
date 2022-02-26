@@ -15,7 +15,9 @@ in
       easyPS.purs-0_14_5
       easyPS.spago
       easyPS.pulp
+      easyPS.psc-package
       pkgs.nodejs-14_x
+      pkgs.nodePackages.bower
     ];
 
     shellHook = ''
