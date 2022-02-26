@@ -1,4 +1,4 @@
-module Halogen.Router.PushState.UseRouter where
+module Halogen.Router.UseRouter where
 
 import Prelude
 

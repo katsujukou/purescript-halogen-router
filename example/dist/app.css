@@ -1,0 +1,20 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+.header-menu > ul > li {
+  cursor: pointer;
+}
+  
+.header-menu > ul > li > a {
+  color: #5b5b5b;
+}
+.header-menu > ul > li:hover {
+  background-color: #fff5f8;
+}
+      
+.header-menu > ul > li.is-active {
+  background-color: rgb(255 222 240);
+}
+    
+.header-menu > ul > li.is-active:hover {
+  background-color: #ffd6e5;
+}

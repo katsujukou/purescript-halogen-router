@@ -6,10 +6,10 @@ This directory contains very simple Halogen app using `halogen-router`
 Follow the instructions below.
 Note: You need the Docker installed.
 ```
+npm run example
 cd example
-spago bundle-app -m Example.Main -t example/dist/app.js
 docker image build -t halogen_router_example/latest .
-docker container run  -d -p 38080:80 halogen_router_example/lates
+docker container run  -d -p 38080:80 halogen_router_example/latest
 ```
 
 ## Application structure

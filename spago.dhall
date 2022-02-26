@@ -1,10 +1,8 @@
 { name = "my-project"
 , dependencies =
   [ "aff"
-  , "console"
   , "effect"
   , "either"
-  , "foldable-traversable"
   , "foreign"
   , "halogen"
   , "halogen-hooks"
