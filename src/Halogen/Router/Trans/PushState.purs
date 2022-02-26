@@ -1,4 +1,10 @@
-module Halogen.Router.PushState.Trans where
+module Halogen.Router.Trans.PushState
+  ( RouterInstance
+  , RouterT(..)
+  , mkRouter
+  , runRouterT
+  )
+  where
 
 import Prelude
 

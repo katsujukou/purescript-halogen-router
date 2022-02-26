@@ -8,12 +8,13 @@ import Example.Components.HeaderMenu (headerMenu)
 import Example.Data.Route (Route(..))
 import Example.Views.About (aboutView)
 import Example.Views.Home (homeView)
+import Halogen (ClassName(..))
 import Halogen as H
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
 import Halogen.Hooks as Hooks
 import Halogen.Router.Class (class MonadRouter)
-import Halogen.Router.PushState.UseRouter (useRouter)
+import Halogen.Router.UseRouter (useRouter)
 import Type.Proxy (Proxy(..))
 
 app
@@ -26,7 +27,11 @@ app = Hooks.component \_ _ -> Hooks.do
   Hooks.pure do
     HH.div [ HP.id "app" ]
       [ HH.slot_ (Proxy :: Proxy "headerMenu") unit headerMenu {}
-      , routerView current
+      , HH.div [ HP.class_ $ ClassName "columns" ]
+        [ HH.div [ HP.class_ $ ClassName "column is-half is-offset-one-quarter" ]
+          [ routerView current
+          ]
+        ]
       ]
 
   where

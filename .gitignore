@@ -8,5 +8,5 @@
 /.purs*
 /.psa*
 /.spago
-
+/.vscode
 /**/.DS_Store

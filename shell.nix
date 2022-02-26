@@ -14,6 +14,7 @@ in
     buildInputs = [
       easyPS.purs-0_14_5
       easyPS.spago
+      easyPS.pulp
       pkgs.nodejs-14_x
     ];
 

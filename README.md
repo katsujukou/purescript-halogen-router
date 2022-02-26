@@ -4,11 +4,11 @@
 Routing management for Halogen.
 
 ### TODO
-  - Support Hash-based router.
+  - Add some informative comments.
   - Add tests.
 
 ## Installation
-install `halogen-router` with Spago:
+Install `halogen-router` with Spago:
 ```
 spago install halogen-router
 ```
@@ -79,6 +79,9 @@ When we run the application, we'll transform the underlying monad, which satisfi
 
 To achieve this, we can define our application-specific monad using the `RouterT` transformer:
 ```purs
+import Halogen.Router.Trans.Hash (RouterT)      -- For hash-based routing
+import Halogen.Router.Trans.PushState (RouterT) -- For PushState-based routing
+
 newtype AppM a = AppM (RouterT Aff a) 
 ```
 This monad can be easily transformed to the `Aff` using `runRouterT`.
@@ -88,7 +91,7 @@ The `runRouterT` require the router instance.
 We can create the router instance by providing the `RouteDuplex` route codec to the `mkRouter` function. Here is the example:
 ```purs
 import Halogen as H
-import Halogen.Router.PushState.Trans (mkRouter, runRouter)
+import Halogen.Router.Trans.PushState (mkRouter, runRouter)
 import Example.Component.App (app) -- our application's root component 
 
 main :: Effect Unit

@@ -1,10 +1,10 @@
-{ name = "my-project"
+{ name = "halogen-router"
+, license = "MIT"
+, repository = "https://github.com/katsujukou/purescript-halogen-router"
 , dependencies =
   [ "aff"
-  , "console"
   , "effect"
   , "either"
-  , "foldable-traversable"
   , "foreign"
   , "halogen"
   , "halogen-hooks"
@@ -19,5 +19,5 @@
   , "tuples"
   ]
 , packages = ./packages.dhall
-, sources = [ "src/**/*.purs", "test/**/*.purs", "example/**/*.purs" ]
+, sources = [ "src/**/*.purs" ]
 }
