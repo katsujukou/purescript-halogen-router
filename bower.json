@@ -1,0 +1,33 @@
+{
+    "name": "purescript-halogen-router",
+    "license": [
+        "MIT"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/katsujukou/purescript-halogen-router"
+    },
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "output"
+    ],
+    "dependencies": {
+        "purescript-aff": "^v6.0.0",
+        "purescript-effect": "^v3.0.0",
+        "purescript-either": "^v5.0.0",
+        "purescript-foreign": "^v6.0.1",
+        "purescript-halogen": "^v6.1.3",
+        "purescript-halogen-hooks": "https://github.com/thomashoneyman/purescript-halogen-hooks.git#v0.5.0",
+        "purescript-halogen-store": "https://github.com/thomashoneyman/purescript-halogen-store.git#v0.2.1",
+        "purescript-halogen-subscriptions": "https://github.com/purescript-halogen/purescript-halogen-subscriptions.git#v1.0.0",
+        "purescript-maybe": "^v5.0.0",
+        "purescript-prelude": "^v5.0.1",
+        "purescript-routing": "^v10.0.1",
+        "purescript-routing-duplex": "^v0.5.1",
+        "purescript-safe-coerce": "^v1.0.0",
+        "purescript-transformers": "^v5.2.0",
+        "purescript-tuples": "^v6.0.1"
+    }
+}
