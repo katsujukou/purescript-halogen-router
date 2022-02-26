@@ -1,7 +1,6 @@
 {
   "name": "purescript-halogen-router",
   "private": true,
-  "version": "0.0.1",
   "description": "Routing management for Halogen.",
   "repository": "https://github.com/katsujukou/purescript-halogen-router",
   "author": "Katsujukou Kineya<katsujukou@gmail.com>",
