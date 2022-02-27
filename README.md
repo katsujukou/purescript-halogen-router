@@ -26,6 +26,8 @@ We also create the codec for our routes using the combinator from `purescript-ro
 If you aren't familiar with that library, please refer to the [document](https://github.com/natefaubion/purescript-routing-duplex).
 
 ```purs
+module App.Data.Route where
+
 data MyRoute
   = Home
   | About
@@ -64,7 +66,7 @@ component
 component = Hooks.component \_ _ -> Hooks.do
   current /\ routerFn <- useRouter
 ```
-With this, if current browser location' path matches with one of the defined routes, then `current` is the encoded `MyRoute` value wrapped in the `Just` constructor, and if matches none of the routes, then `Nothing` is returned. When browser location changed, `current` value also changes reactively.
+With this, if current browser location's path (or hash for hash-based routing) matches with one of the defined routes, then the value of `current` is the decoded `MyRoute` wrapped in the `Just` constructor, and if matches none of the routes, then `Nothing`. When browser location changed, `current` value also changes reactively.
 
 The `routerFn` is the record containing two router functinality:
 ```purs
@@ -92,7 +94,7 @@ We can create the router instance by providing the `RouteDuplex` route codec to 
 ```purs
 import Halogen as H
 import Halogen.Router.Trans.PushState (mkRouter, runRouter)
-import Example.Component.App (app) -- our application's root component 
+import App.Component.App (app) -- our application's root component 
 
 main :: Effect Unit
 main = runHalogenAff do
