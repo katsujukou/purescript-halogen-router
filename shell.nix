@@ -4,15 +4,15 @@ let
   easyPS = import (pkgs.fetchFromGitHub {
     owner = "justinwoo";
     repo = "easy-purescript-nix";
-    rev = "3630943b74f681289ed87a0ed6c3e502556ddebb";
-    sha256 = "1i7zqda52npklj3d7pq80zw5rfjjzdqpl5bdrsp6vchg5frgj6ky";
+    rev = "7f6207b9e9b021e30d6c82f49ba20f0d5db01d1f";
+    sha256 = "1j02jcs88fyc0diyyym1y3yhrhpjj7jcdj9aw8sfcd20yrpd4pbr";
   }) {
     inherit pkgs;
   };
 in
   pkgs.mkShell {
     buildInputs = [
-      easyPS.purs-0_14_5
+      easyPS.purs-0_14_7
       easyPS.spago
       easyPS.pulp
       easyPS.psc-package
