@@ -32,6 +32,12 @@ type RouterInstance r =
   , listener :: Listener r
   }
 
+-- | The router monad transformer.
+-- |
+-- | This monad transformer extends the base monad transformer with capabilities
+-- | to manipulate the routing of type `r`, which uses PushState browser API in low-level implementations.
+-- |
+-- | The `MonadRouter` type class describes the operations supported by this monad.
 newtype RouterT :: Type -> (Type -> Type) -> Type -> Type
 newtype RouterT r m a = RouterT (ReaderT (RouterInstance r) m a)
 
@@ -72,6 +78,7 @@ instance MonadEffect m => MonadRouter r (RouterT r m) where
   
   emitMatched = RouterT $ asks _.emitter
 
+-- | Return a new router instance. 
 mkRouter :: forall r. Eq r => RouteDuplex' r -> Effect (RouterInstance r)
 mkRouter codec = do
   interface <- makeInterface
@@ -84,5 +91,7 @@ mkRouter codec = do
 
   pure { codec, interface, emitter, listener }
 
+
+-- | Run a computation in the `RouterT` monad using provided router instance.
 runRouterT :: forall r m. RouterInstance r -> RouterT r m ~> m
 runRouterT router = coerce >>> flip runReaderT router

@@ -30,6 +30,13 @@ type RouterInstance r =
   , listener :: Listener r
   }
 
+
+-- | The router monad transformer.
+-- |
+-- | This monad transformer extends the base monad transformer with capabilities
+-- | to manipulate the routing of type `r`, which uses hash in browser location.
+-- |
+-- | The `MonadRouter` type class describes the operations supported by this monad.
 newtype RouterT :: Type -> (Type -> Type) -> Type -> Type
 newtype RouterT r m a = RouterT (ReaderT (RouterInstance r) m a)
 
@@ -69,6 +76,7 @@ instance MonadEffect m => MonadRouter r (RouterT r m) where
   
   emitMatched = RouterT $ asks _.emitter
 
+-- | Return a new router instance. 
 mkRouter :: forall r. Eq r => RouteDuplex' r -> Effect (RouterInstance r)
 mkRouter codec = do
   { emitter, listener } <- HS.create
@@ -78,5 +86,6 @@ mkRouter codec = do
 
   pure { codec, emitter, listener }
 
+-- | Run a computation in the `RouterT` monad using provided router instance.
 runRouterT :: forall r m. RouterInstance r -> RouterT r m ~> m
 runRouterT router = coerce >>> flip runReaderT router
