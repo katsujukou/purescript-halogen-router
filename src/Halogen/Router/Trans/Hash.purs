@@ -33,7 +33,7 @@ type RouterInstance r =
 
 -- | The router monad transformer.
 -- |
--- | This monad transformer extends the base monad transformer with capabilities
+-- | This monad transformer extends the base monad transformer with abilities
 -- | to manipulate the routing of type `r`, which uses hash in browser location.
 -- |
 -- | The `MonadRouter` type class describes the operations supported by this monad.
